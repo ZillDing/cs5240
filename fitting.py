@@ -134,7 +134,7 @@ if True:
 
 
 print "Writing to result_Order_%d.ply" % Order
-file = open("result_Order_%d.ply" % Order, "w")   # write the data to file. To get a ply file, one needs to copy and paste the header and modify element vertex number by add num^2
+file = open("result_Order_%d.ply" % Order, "w")   # write the data to file. To get a ply file, one needs to copy and paste the header and modify element vertex number by adding num^2
 
 if dim==10:
 	np.savetxt(file, result,  ["%f", "%f", "%f","%f","%f","%f","%d","%d","%d","%d"], " ")
