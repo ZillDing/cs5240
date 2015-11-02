@@ -141,20 +141,19 @@ if True:
 	print "Processed %d points." % (k + 1)
 
 print "Writing to", output_file
-# write the data to file. To get a ply file, one needs to copy and paste the header and modify element vertex number by adding num^2
+
+# write the data to file
 file = open(output_file, "w")
 
-data_format = None
-if dim == 11:
-	data_format = ["%f", "%f", "%f","%f","%f","%f","%d","%d","%d","%d","%d"]
-if dim == 10:
-	data_format = ["%f", "%f", "%f","%f","%f","%f","%d","%d","%d","%d"]
-elif dim == 9:
-	data_format = ["%f", "%f", "%f","%f","%f","%f","%d","%d","%d"]
-
-if data_format is None:
-	print "Please check the dimension of input data. Unsupported dimension:", dim
-else:
-	np.savetxt(file, result,  data_format, " ", header=header_tuple[0].strip(), comments="")
+data_format = ["%f", "%f", "%f", "%f", "%f", "%f"]
+for i in range(dim - len(data_format)):
+	data_format.append("%d")
+np.savetxt(file, result,
+	fmt=data_format,
+	delimiter=" ",
+	header=header_tuple[0].strip(),
+	comments="")
 
 file.close()
+
+# TODO: modify the header of the output ply file to change element vertex number to adding num^2
