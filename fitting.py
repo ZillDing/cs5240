@@ -1,3 +1,4 @@
+import re
 import numpy as np
 import numpy.linalg as la
 
@@ -19,6 +20,7 @@ def get_header(file):
 # order = 6: sixth order fit
 # Support orders up to 6
 order = 3
+num = 500;
 input_file = "data/example-1-without-noise.ply"
 output_file = "data/example-1-result-order-%d.ply" % order
 
@@ -86,7 +88,6 @@ x_max = np.max(data[:,0])
 y_min = np.min(data[:,1])
 y_max = np.max(data[:,1])
 
-num = 500;
 x_arr = np.linspace(x_min, x_max, num=num, endpoint=True)
 y_arr = np.linspace(y_min, y_max, num=num, endpoint=True)
 xv, yv = np.meshgrid(x_arr, y_arr)
@@ -145,15 +146,19 @@ print "Writing to", output_file
 # write the data to file
 file = open(output_file, "w")
 
+# compute output data format
 data_format = ["%f", "%f", "%f", "%f", "%f", "%f"]
 for i in range(dim - len(data_format)):
 	data_format.append("%d")
+# compute output ply file header
+output_header = re.sub(r"(element vertex) [0-9]*",
+	r"\1 " + str(num**2),
+	header_tuple[0].strip())
+
 np.savetxt(file, result,
 	fmt=data_format,
 	delimiter=" ",
-	header=header_tuple[0].strip(),
+	header=output_header,
 	comments="")
 
 file.close()
-
-# TODO: modify the header of the output ply file to change element vertex number to adding num^2
