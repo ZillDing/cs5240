@@ -20,7 +20,7 @@ def get_header(file):
 # order = 6: sixth order fit
 # Support orders up to 6
 order = 3
-num = 500;
+num = 500
 input_file = "data/example-1-without-noise.ply"
 output_file = "data/example-1-result-order-%d.ply" % order
 
@@ -44,27 +44,27 @@ if order > 1:
 	D[:,3:5] = data[:,0:2]**2
 	D[:,5] = np.matrix(data[:,0] * data[:,1]).T
 if order > 2:
-	D[:,6:8] = data[:,0:2]**3;
-	D[:,8] = np.matrix(data[:,0]**2 * data[:,1]).T;
-	D[:,9] = np.matrix(data[:,0] * data[:,1]**2).T;
+	D[:,6:8] = data[:,0:2]**3
+	D[:,8] = np.matrix(data[:,0]**2 * data[:,1]).T
+	D[:,9] = np.matrix(data[:,0] * data[:,1]**2).T
 if order > 3:
-	D[:,10:12] = data[:,0:2]**4;
-	D[:,12] = np.matrix(data[:,0]**3 * data[:,1]).T;
-	D[:,13] = np.matrix(data[:,0]**2 * data[:,1]**2).T;
-	D[:,14] = np.matrix(data[:,0] * data[:,1]**3).T;
+	D[:,10:12] = data[:,0:2]**4
+	D[:,12] = np.matrix(data[:,0]**3 * data[:,1]).T
+	D[:,13] = np.matrix(data[:,0]**2 * data[:,1]**2).T
+	D[:,14] = np.matrix(data[:,0] * data[:,1]**3).T
 if order > 4:
-	D[:,15:17] = data[:,0:2]**5;
-	D[:,17] = np.matrix(data[:,0]**4 * data[:,1]).T;
-	D[:,18] = np.matrix(data[:,0]**3 * data[:,1]**2).T;
-	D[:,19] = np.matrix(data[:,0]**2 * data[:,1]**3).T;
-	D[:,20] = np.matrix(data[:,0] * data[:,1]**4).T;
+	D[:,15:17] = data[:,0:2]**5
+	D[:,17] = np.matrix(data[:,0]**4 * data[:,1]).T
+	D[:,18] = np.matrix(data[:,0]**3 * data[:,1]**2).T
+	D[:,19] = np.matrix(data[:,0]**2 * data[:,1]**3).T
+	D[:,20] = np.matrix(data[:,0] * data[:,1]**4).T
 if order > 5:
-	D[:,21:23] = data[:,0:2]**6;
-	D[:,23] = np.matrix(data[:,0]**5 * data[:,1]).T;
-	D[:,24] = np.matrix(data[:,0]**4 * data[:,1]**2).T;
-	D[:,25] = np.matrix(data[:,0]**3 * data[:,1]**3).T;
-	D[:,26] = np.matrix(data[:,0]**2 * data[:,1]**4).T;
-	D[:,27] = np.matrix(data[:,0] * data[:,1]**5).T;
+	D[:,21:23] = data[:,0:2]**6
+	D[:,23] = np.matrix(data[:,0]**5 * data[:,1]).T
+	D[:,24] = np.matrix(data[:,0]**4 * data[:,1]**2).T
+	D[:,25] = np.matrix(data[:,0]**3 * data[:,1]**3).T
+	D[:,26] = np.matrix(data[:,0]**2 * data[:,1]**4).T
+	D[:,27] = np.matrix(data[:,0] * data[:,1]**5).T
 
 # Print to verify that data is arranged correctly.
 print "D =\n", D
@@ -102,31 +102,31 @@ if order > 1:
 	D[:,3:5] = data_new[:,0:2]**2
 	D[:,5] = np.matrix(data_new[:,0] * data_new[:,1]).T
 if order > 2:
-	D[:,6:8] = data_new[:,0:2]**3;
-	D[:,8] = np.matrix(data_new[:,0]**2 * data_new[:,1]).T;
-	D[:,9] = np.matrix(data_new[:,0] * data_new[:,1]**2).T;
+	D[:,6:8] = data_new[:,0:2]**3
+	D[:,8] = np.matrix(data_new[:,0]**2 * data_new[:,1]).T
+	D[:,9] = np.matrix(data_new[:,0] * data_new[:,1]**2).T
 if order > 3:
-	D[:,10:12] = data_new[:,0:2]**4;
-	D[:,12] = np.matrix(data_new[:,0]**3 * data_new[:,1]).T;
-	D[:,13] = np.matrix(data_new[:,0]**2 * data_new[:,1]**2).T;
-	D[:,14] = np.matrix(data_new[:,0] * data_new[:,1]**3).T;
+	D[:,10:12] = data_new[:,0:2]**4
+	D[:,12] = np.matrix(data_new[:,0]**3 * data_new[:,1]).T
+	D[:,13] = np.matrix(data_new[:,0]**2 * data_new[:,1]**2).T
+	D[:,14] = np.matrix(data_new[:,0] * data_new[:,1]**3).T
 if order > 4:
-	D[:,15:17] = data_new[:,0:2]**5;
-	D[:,17] = np.matrix(data_new[:,0]**4 * data_new[:,1]).T;
-	D[:,18] = np.matrix(data_new[:,0]**3 * data_new[:,1]**2).T;
-	D[:,19] = np.matrix(data_new[:,0]**2 * data_new[:,1]**3).T;
-	D[:,20] = np.matrix(data_new[:,0] * data_new[:,1]**4).T;
+	D[:,15:17] = data_new[:,0:2]**5
+	D[:,17] = np.matrix(data_new[:,0]**4 * data_new[:,1]).T
+	D[:,18] = np.matrix(data_new[:,0]**3 * data_new[:,1]**2).T
+	D[:,19] = np.matrix(data_new[:,0]**2 * data_new[:,1]**3).T
+	D[:,20] = np.matrix(data_new[:,0] * data_new[:,1]**4).T
 if order > 5:
-	D[:,21:23] = data_new[:,0:2]**6;
-	D[:,23] = np.matrix(data_new[:,0]**5 * data_new[:,1]).T;
-	D[:,24] = np.matrix(data_new[:,0]**4 * data_new[:,1]**2).T;
-	D[:,25] = np.matrix(data_new[:,0]**3 * data_new[:,1]**3).T;
-	D[:,26] = np.matrix(data_new[:,0]**2 * data_new[:,1]**4).T;
-	D[:,27] = np.matrix(data_new[:,0] * data_new[:,1]**5).T;
+	D[:,21:23] = data_new[:,0:2]**6
+	D[:,23] = np.matrix(data_new[:,0]**5 * data_new[:,1]).T
+	D[:,24] = np.matrix(data_new[:,0]**4 * data_new[:,1]**2).T
+	D[:,25] = np.matrix(data_new[:,0]**3 * data_new[:,1]**3).T
+	D[:,26] = np.matrix(data_new[:,0]**2 * data_new[:,1]**4).T
+	D[:,27] = np.matrix(data_new[:,0] * data_new[:,1]**5).T
 
 pred = D * a
 
-dim = data.shape[1];
+dim = data.shape[1]
 result = np.matrix(np.empty([num**2, dim]))
 result[:,2] = pred
 result[:,0:2] = data_new
