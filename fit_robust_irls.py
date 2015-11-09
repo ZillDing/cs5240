@@ -56,18 +56,18 @@ if Order>5:
 # Print to verify that data is arranged correctly.
 print "D =\n", D
 print "v =\n", z
+# initialize the weighed data
 D_hat=np.mat(np.copy(D))
 z_hat=np.mat(np.copy(z))
 W=np.ones(n)
-p=0.5
-# prepare the weighted dat
-
+p=0.5 # the value of p-2 in the lecture note
+# iterative process
 for iter in xrange(20):
-	W=np.sqrt(W)
+	W=np.sqrt(W)  # put the W^(1/2) inside z and D to get z_hat and D_hat, then the problem is a regular least square problem
 	for i in xrange(n):
 		D_hat[i,:]=W[i]*D[i,:]
 		z_hat[i]=W[i]*z[i]
-
+	
 	# Solve for least square solution
 	a,e,r,s = la.lstsq(D_hat, z_hat)
 	print "a =\n", a
