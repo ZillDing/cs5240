@@ -19,10 +19,10 @@ def get_header(file):
 # order = 5: fifth order fit
 # order = 6: sixth order fit
 # Support orders up to 6
-order = 1
+Order = 1
 num = 500
 input_file = "data/example-1-left.ply"
-output_file = "data/example-1-left-result-order-%d.ply" % order
+output_file = "data/example-1-left-result-order-%d.ply" % Order
 
 
 file = open(input_file)
@@ -41,7 +41,7 @@ items=(0,3,6,10,15,21,28) # number of items in fitting with respecto the order o
 # Order =6: sixth order fit
 # Support orders up to 6
 
-Order=2
+#Order=2
 item=items[Order]
 
 z = np.matrix(data[:,2]).T
