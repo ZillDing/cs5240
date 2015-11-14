@@ -24,7 +24,7 @@ num = 500
 input_file = "data/example-1-left.ply"
 output_file = "data/example-1-left-result-order-%d.ply" % Order
 
-
+ 
 file = open(input_file)
 header_tuple = get_header(file)
 data = np.genfromtxt(file, delimiter=" ", skip_header=header_tuple[1])
