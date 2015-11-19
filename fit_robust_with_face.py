@@ -85,7 +85,7 @@ print "v =\n", z
 D_hat=np.mat(np.copy(D))
 z_hat=np.mat(np.copy(z))
 W=np.ones(n)
-p=0.5
+p=-0.5
 # prepare the weighted dat
 
 for iter in xrange(20):
