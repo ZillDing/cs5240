@@ -60,7 +60,7 @@ print "v =\n", z
 D_hat=np.mat(np.copy(D))
 z_hat=np.mat(np.copy(z))
 W=np.ones(n)
-p=0.5 # the value of p-2 in the lecture note
+p=-0.5 # the value of p-2 in the lecture note
 # iterative process
 for iter in xrange(20):
 	W=np.sqrt(W)  # put the W^(1/2) inside z and D to get z_hat and D_hat, then the problem is a regular least square problem
